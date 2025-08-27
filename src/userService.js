@@ -8,6 +8,7 @@ class UserService {
     if (!user) {
       throw new Error("Usuário não encontrado");
     }
+    
     return user.name;
   }
 }
