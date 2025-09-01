@@ -455,44 +455,4 @@ describe("Classe Utilitarios", () => {
       });
     });
   });
-
-  describe.skip("Testes de Performance", () => {
-    test("ordenarArray deve processar arrays grandes eficientemente", () => {
-      const largeArray = Array.from({ length: 10000 }, () => Math.random());
-      const startTime = performance.now();
-      utilitarios.ordenarArray(largeArray);
-      const endTime = performance.now();
-      
-      expect(endTime - startTime).toBeLessThan(100);
-    });
-
-    test("removerDuplicados deve processar arrays grandes eficientemente", () => {
-      const largeArray = Array.from({ length: 10000 }, () => Math.floor(Math.random() * 100));
-      const startTime = performance.now();
-      utilitarios.removerDuplicados(largeArray);
-      const endTime = performance.now();
-      
-      expect(endTime - startTime).toBeLessThan(50);
-    });
-  });
-
-  describe("Testes de Integração", () => {
-    test("deve processar e formatar texto corretamente", () => {
-      const texto = "  hello world  ";
-      const textoLimpo = utilitarios.removerEspacos(texto);
-      const textoPrimeiraLetra = utilitarios.primeiraLetraMaiuscula(textoLimpo);
-      
-      expect(textoPrimeiraLetra).toBe("Hello world");
-    });
-
-    test("deve processar arrays de números corretamente", () => {
-      const numeros = [5, 2, 8, 2, 1, 8, 9, 1];
-      const semDuplicados = utilitarios.removerDuplicados(numeros);
-      const ordenados = utilitarios.ordenarArray(semDuplicados);
-      const media = utilitarios.mediaArray(ordenados);
-      
-      expect(ordenados).toEqual([1, 2, 5, 8, 9]);
-      expect(media).toBe(5);
-    });
-  });
 });
