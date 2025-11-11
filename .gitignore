@@ -11,3 +11,11 @@ jspm_packages/
 .npm
 .env
 .env.test
+
+# Arquivos gerados
+node_modules/
+coverage/
+
+# Relatórios do Stryker
+reports/
+stryker-reports/
